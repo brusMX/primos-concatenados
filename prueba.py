@@ -1,8 +1,7 @@
-  #!/usr/bin/env python
+#!/usr/bin/env python
 from __future__ import print_function
-lista_probados = []
-lista_por_probar = [2,3,5,7]
-j = 1
+lista_probados = []#Lista de los primos que ya sabemos que son primos
+lista_por_probar = [2,3,5,7]#Lista de primos que ya sabemos primos de un digito para generar la lista al vuelo de los siguientes 
 
 #TODO sustituir prueba de primalidad con una de verdad y rapida
 def is_prime_number(x):
@@ -22,7 +21,6 @@ while primo != None and lista_por_probar:
         aux = int(str(num)+str(primo))
         if is_prime_number(int(aux)):
             lista_por_probar.append(aux)
-            j=j+1
     lista_probados.append(primo)
     lista_por_probar.remove(primo)
     if not lista_por_probar:
@@ -30,15 +28,13 @@ while primo != None and lista_por_probar:
     else:
         primo = lista_por_probar[0]
         print(str(aux) + ', ', end="")
-
 print ("\nSe cierra el ciclo", end="\n")
-print (str(j) + " primos encontrados")
 
-print ("La lista de probados contiene " + str(len(lista_probados)) + " elemento(s)")
+print ("La lista de primos probados contiene " + str(len(lista_probados)) + " elemento(s)")
 print("\nCOMIENZA")
 for elem in lista_probados:
     print (str(elem) + "," , end="") 
 print("\nFIN")
-print ("La lista de probados contiene " + str(len(lista_por_probar)) + " elemento(s)")
+print ("La lista de primos por probar contiene " + str(len(lista_por_probar)) + " elemento(s)")
 for elem in lista_por_probar:
     print (str(elem) + "," , end="") 
